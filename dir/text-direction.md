@@ -11,7 +11,7 @@ Overall and breakdown of browser support
 
 |     | Chrome | Firefox | Safari | Opera | Edge | IE  |
 |:----|:------:|:-------:|:------:|:-----:|:----:|:---:|
-| Dir |  Yes   |   YES   |  YES   |  YES  | YES  | YES |
+| Dir |  YES   |   YES   |  YES   |  YES  | YES  | YES |
 
 
 #### Additional Information on browser support  
@@ -135,7 +135,7 @@ When directionality, of `dir = “rtl”`, is placed on the `html` tag the title
 
 | Title | Chrome | Firefox | Safari | Opera | Edge | IE |
 |:------|:------:|:-------:|:------:|:-----:|:----:|:--:|
-| Dir   |  Yes   |   YES   |  YES   |  YES  | YES  | NO |
+| Dir   |  YES   |   YES   |  YES   |  YES  | YES  | NO |
 
 
 #### *Scroll Bar*
@@ -148,7 +148,7 @@ When you apply the directionality of RTL, in the html or body tag it will change
 
 | Scroll Bar | Chrome | Firefox | Safari | Opera | Edge | IE |
 |:-----------|:------:|:-------:|:------:|:-----:|:----:|:--:|
-| Dir        |  Yes   |   YES   |  YES   |  YES  |  NO  | NO |
+| Dir        |  YES   |   YES   |  YES   |  YES  |  NO  | NO |
 
 #### *Alert Box*
 When directionality, `dir=”rtl”`, is applied to the html tag it will change the directionality of the alert box.  You will see the alert box as a mirror image of it self.  The yellow hazard icon is displayed on the right and the text is displayed from right to left.  To avoid changing the user interface wrap all contents, within the body, in a `<div>` and add directionality to the div. It will affect all block elements inside the body and not affect the browser chrome.  
@@ -158,7 +158,7 @@ When directionality, `dir=”rtl”`, is applied to the html tag it will change 
 
 | Scroll Bar | Chrome | Firefox | Safari | Opera | Edge | IE |
 |:-----------|:------:|:-------:|:------:|:-----:|:----:|:--:|
-| Dir        |  Yes   |   YES   |  YES   |  YES  | YES  | NO |
+| Dir        |  YES   |   YES   |  YES   |  YES  | YES  | NO |
 
 ### Sending directionality to the server
 When the browser applies rtl directionality to text in form, by using `dir=”auto”`, that information can be lost when you select submit and send the information to the server.  To avoid this you can use a ne HTML5 attribute `dirname`.
