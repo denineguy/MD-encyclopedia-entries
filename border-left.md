@@ -271,7 +271,7 @@ CSS:
 ```
 
 RESULTS:
-![Complex border-left examples](images/basic2.png)  
+![Complex border-left examples](images/complex1.png)  
 Example of complex border-left property  
 
 ## Special Notes
