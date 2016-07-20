@@ -1,4 +1,4 @@
-# Setting Text Direction for Languages
+# Dir
 
 *`dir` is a global HTML attribute that is used to specify the text or writing direction of an elements content.*
 
@@ -9,10 +9,12 @@ At a basic level the `dir` attribute can be used to set the text direction at th
 ## Browser Support
 Overall and breakdown of browser support  
 
-|     | Chrome | Firefox | Safari | Opera | Edge | IE  |
-|:----|:------:|:-------:|:------:|:-----:|:----:|:---:|
-| Dir |  YES   |   YES   |  YES   |  YES  | YES  | YES |
-
+|                   | Chrome | Firefox | Safari | Opera | Edge | IE  |
+|:------------------|:------:|:-------:|:------:|:-----:|:----:|:---:|
+| Basic Support     |  YES   |   YES   |  YES   |  YES  | YES  | YES |
+| Title Support     |  YES   |   YES   |  YES   |  YES  | YES  | NO  |
+| Scrollbar Support |  YES   |   YES   |  YES   |  YES  |  NO  | NO  |
+| Alertbox Support  |  YES   |   YES   |  YES   |  YES  | YES  | NO  |
 
 #### Additional Information on browser support  
 Find more information regarding [browser support ](https://www.w3.org/International/tests/repo/results/native-user-interfaces) for the `dir` attribute  
@@ -31,7 +33,9 @@ The `dir` attribute is a global attribute meaning it can be used on any HTML ele
 
 ## Example 1 - Basic
 
-A `dir` attribute can be added to the html tag to set the base text direction for the document or page. Each subsequent block element will inherit the text direction of the parent element.  In this example you will notice that RTL languages are read from right to left and are displayed that way.  So the words for the Hebrew language are flipped and read RTL.  When an LTR word or phrase is encountered, the arrangement is switch and read left-to-right, before returning to read right-to-left afterwards.  The exclamation point is considered an RTL character and is thus should come last and aligned to the left. The text direction can also be set on individual block element if the direction of the element needs to be different than the rest of the document.  You will see "My text directions is LTR!" has *left-to-right* directionality.
+A `dir` attribute can be added to the html tag to set the base text direction for the document or page. Each subsequent block element will inherit the text direction of the parent element.  In this example you will notice that RTL languages are read from right to left and are displayed that way.  So the words for the Hebrew language are flipped and read RTL.  When an LTR word or phrase is encountered, the arrangement is switch and read left-to-right, before returning to read right-to-left afterwards.  The exclamation point is considered an RTL character and is thus should come last and aligned to the left. The text direction can also be set on individual block element if the direction of the element needs to be different than the rest of the document.  You will see "My text directions is LTR!" has *left-to-right* directionality.  
+
+HTML:
 ```
 <!DOCTYPE html>
 <html dir="rtl" lang="en">
@@ -48,12 +52,16 @@ A `dir` attribute can be added to the html tag to set the base text direction fo
   </body>
 </html>
 ```  
+
+RESULT:
 ![Basic Example of Dir Attribute](images/basic.png)
 *Basic Example of Dir Attribute*
 
 ## Example 2 - Dynamic directionality
 
 When the language or the direction of the text is not automatically known `dir=”auto”` can be used for the browser to automatically detect the direction of the content.  
+
+HTML:
 ```
 <div>
   <p dir="auto">I am written in English</p>
@@ -61,6 +69,7 @@ When the language or the direction of the text is not automatically known `dir=�
   <p dir="auto">أنا مكتوبة باللغة العربية </p>
 </div>
 ```  
+RESULT:
 ![Basic Example of dir Attribute with auto value](images/basic-auto.png)
 *Basic Example of dir="auto" Value*
 
@@ -69,7 +78,9 @@ Browser Support for `dir=”auto”`
 ##Example 3 – Tables
 The `dir` attribute can be used to direction of a table element.  In the example below you will see how setting dir=”rtl” will change the flow or order of the columns as well as the content within each cell.  
 
-This examples shows a table with the default direction and the below example shows a table with RTL directionality.
+This examples shows a table with the default direction and the below example shows a table with RTL directionality.  
+
+HTML:
 ```
 <div>
   <p>This table has the default direction `dir="ltr"`</p>
@@ -103,18 +114,22 @@ This examples shows a table with the default direction and the below example sho
   </table>
 </div>
 ```  
-
+RESULT:
 ![Example of the dir attribute with tables](images/basic-table.png)
 *Example of the dir attribute with tables*
 
 ## Example 4 - Complex
-There are certain time where you might find the mixing of text direction within the same block element.  This is called bidirectional. The below examples display how to use inline elements to set the direction of a specific word or phrase within a block element. In this case since no direction is set on the `<div>` the direction is set to the default value of “ltr”
+There are certain time where you might find the mixing of text direction within the same block element.  This is called bidirectional. The below examples display how to use inline elements to set the direction of a specific word or phrase within a block element. In this case since no direction is set on the `<div>` the direction is set to the default value of “ltr”  
+
+HTML:
 ```
 <div>
   <!--  The YouTube video of a beginner's guide to HTML in hebrew-->
   <p>The YouTube video"<span dir="rtl">למתחילים מדריך<span dir="ltr">HTML </span></span>" in hebrew.</p>
 </div>
 ```
+
+RESULT:
 ![Complex Example of Dir Attribute with Inline Element](images/complex.png)
 *Complex Example of Dir Attribute with Inline Element*  
 
@@ -129,36 +144,17 @@ The browser chrome should not be confused with the web browser Google Chrome.  T
 
 #### *Title*  
 
-When directionality, of `dir = “rtl”`, is placed on the `html` tag the title element is supposed to inherit the directionality and HTML urges browsers to support this feature.  Unfortunately Internet Explorer does not support this feature, but Edge does.  
-
-**Browser Support for dir="rtl" on Title**  
-
-| Title | Chrome | Firefox | Safari | Opera | Edge | IE |
-|:------|:------:|:-------:|:------:|:-----:|:----:|:--:|
-| Dir   |  YES   |   YES   |  YES   |  YES  | YES  | NO |
-
+When directionality, of `dir = “rtl”`, is placed on the `html` tag the title element is supposed to inherit the directionality and HTML urges browsers to support this feature.  Unfortunately Internet Explorer does not support this feature, but Edge does. *See above for browser support*.  
 
 #### *Scroll Bar*
-When you apply the directionality of RTL, in the html or body tag it will change the position of the scroll bar and place it on the left side instead of the right side.  To prevent this from happening do not apply directionality to html or body tag.  Instead wrap the contents of the page in a `<div>` and apply directionality to that `<div>` or wrapper.  It will affect all block elements inside the body and not affect the browser chrome.  
+When you apply the directionality of RTL, in the html or body tag it will change the position of the scroll bar and place it on the left side instead of the right side.  To prevent this from happening do not apply directionality to html or body tag.  Instead wrap the contents of the page in a `<div>` and apply directionality to that `<div>` or wrapper.  It will affect all block elements inside the body and not affect the browser chrome. *See above for browser support*.  
 ![left aligned scrollbar](images/scroll-bar1.png)
 *Example of a left aligned scrollbar*  
 
-
-**Browser Support for dir="rtl" on Scroll Bar**  
-
-| Scroll Bar | Chrome | Firefox | Safari | Opera | Edge | IE |
-|:-----------|:------:|:-------:|:------:|:-----:|:----:|:--:|
-| Dir        |  YES   |   YES   |  YES   |  YES  |  NO  | NO |
-
 #### *Alert Box*
-When directionality, `dir=”rtl”`, is applied to the html tag it will change the directionality of the alert box.  You will see the alert box as a mirror image of it self.  The yellow hazard icon is displayed on the right and the text is displayed from right to left.  To avoid changing the user interface wrap all contents, within the body, in a `<div>` and add directionality to the div. It will affect all block elements inside the body and not affect the browser chrome.  
+When directionality, `dir=”rtl”`, is applied to the html tag it will change the directionality of the alert box.  You will see the alert box as a mirror image of it self.  The yellow hazard icon is displayed on the right and the text is displayed from right to left.  To avoid changing the user interface wrap all contents, within the body, in a `<div>` and add directionality to the div. It will affect all block elements inside the body and not affect the browser chrome. *See above for browser support*.  
+
 ![Example of RTL directional alert box](images/alert-box.png)
-
-**Browser Support for dir="rtl" on Alert Box**  
-
-| Scroll Bar | Chrome | Firefox | Safari | Opera | Edge | IE |
-|:-----------|:------:|:-------:|:------:|:-----:|:----:|:--:|
-| Dir        |  YES   |   YES   |  YES   |  YES  | YES  | NO |
 
 ### Sending directionality to the server
 When the browser applies rtl directionality to text in form, by using `dir=”auto”`, that information can be lost when you select submit and send the information to the server.  To avoid this you can use a ne HTML5 attribute `dirname`.

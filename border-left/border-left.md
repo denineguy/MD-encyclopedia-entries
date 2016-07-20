@@ -1,13 +1,13 @@
-# CSS - Border-Left
+# Border-Left
 *The CSS `border-left` property is shorthand that sets and specifies the color, style, and width of and elements left border.*
 
 The border-left property combines the values of `border-left-color`, `border-left-style`, and `border-left-width` properties into one succinct statement to describe and set the left border of an element.  The values of the border-left property can be written in any order and if one or two values are omitted it will set to the default values.  
 
 ## Browser Support
 
-| Border-Left | Chrome | Firefox | Safari | Opera | IE  |
-|:------------|:------:|:-------:|:------:|:-----:|:---:|
-|             |  1.0   |   1.0   |  3.5   |  1.0  | 4.0 |
+|               | Chrome | Firefox | Safari | Opera | IE  |
+|:--------------|:------:|:-------:|:------:|:-----:|:---:|
+| Basic Support |  1.0   |   1.0   |  3.5   |  1.0  | 4.0 |
 
 ## Syntax
 
@@ -86,11 +86,20 @@ Example of border-left width
 
 #### border-left-style
 
-The `border-left-style` sets the style of the left border to display.  The following are the different values for the border style
+The `border-left-style` sets the style of the left border to display.  The following are the different values for the border style  
 
-![border-left-style examples](images/border-style.png)  
-Example of border-left-style width  
+* **dotted** – sets a dotted line left border
+* **dashed** – sets a dashed line left border
+* **solid** – sets a solid line left border
+* **double** – sets a double line left border
+* **groove** – sets a groove line left border
+* **ridge** – sets a ridge line left border (default)
+* **inset** – sets a inset line left border
+* **outset** – sets a outset line left border
+* **none** – sets the left border to none
+* **hidden** – sets a left border to hidden
 
+CSS:
 ```
 p {
   border-left: blue solid;
@@ -127,13 +136,19 @@ p {
   border-left-style: hidden;
 }
 ```
+RESULTS:
+![border-left-style examples](images/border-style.png)  
+Example of border-left-style width  
 
 #### border-left-color
 The `border-left-color` sets the color of the left border to display.  The border-left-color default value is the color of the element.  The border color can be set with the following values:
 
-![border-left-color examples](images/border-color.png)  
-Example of border-left-color width  
+* **name** – sets the color name, "green"
+* **hex** – sets the hexidecimal color value, "#00ff00"<
+* **RGB** – sets the RGB color value, "rgb(0, 255,0)"
+* **transparent** – sets color value to transparent
 
+CSS:
 ```
 p {
   border-left: red solid;
@@ -157,13 +172,19 @@ p {
 }
 ```
 
+RESULTS:
+![border-left-color examples](images/border-color.png)  
+Example of border-left-color width  
+
 ## Example 1
 
 In the below example a the left border of the paragraph is set to 10px double #670CE8
 
+HTML:
 ```
 <p class="basic"> border left: 10px double #670CE8</p>
 ```
+CSS:
 ```
 p {
   padding: 10px;
@@ -177,6 +198,7 @@ p {
 }
 
 ```
+RESULTS:
 ![Basic border-left examples](images/basic1.png)  
 Example of basic border-left property
 
@@ -184,6 +206,7 @@ Example of basic border-left property
 
 In the below example you can set the full border for the paragraph and then override the left border with it’s own styling
 
+HTML:
 ```
 <div>
   <p class="basic">
@@ -192,6 +215,7 @@ In the below example you can set the full border for the paragraph and then over
   </p>
 </div>
 ```
+CSS:
 ```
 p {
   padding: 10px;
@@ -205,13 +229,15 @@ p {
   border-left: 10px ridge #E50CE8;
 }
 ```
+RESULTS:
 ![Overriding border-left examples](images/basic2.png)  
 Example of overriding border with border-left property
 
 ## Example 3 - Complex
 
-This is an example in which two borders are set around the paragraph with a different left border set for each border.  One border-left is : 5px solid #f00; and the other border-left is 4px dotted rgb(0, 0, 255);
+This is an example in which two borders are set around the paragraph with a different left border set for each border.  One border-left is : 5px solid #f00; and the other border-left is 4px dotted rgb(0, 0, 255);  
 
+HTML:
 ```
  <div>
   <p class="complex">
@@ -220,6 +246,7 @@ This is an example in which two borders are set around the paragraph with a diff
 </div>
 ```
 
+CSS:
 ```
 .complex {
   padding: 20px;
@@ -242,9 +269,11 @@ This is an example in which two borders are set around the paragraph with a diff
   border-left: 4px dotted rgb(0, 0, 255);
 }
 ```
+
+RESULTS:
 ![Complex border-left examples](images/basic2.png)  
 Example of complex border-left property  
 
 ## Special Notes
 
-Add information that you found that seemed lesser known. Common bugs, obscure bugs, important distinctions, all belong in thi
+The border-left-color and border-left-width will not be set unless the border-left style property is set.  
